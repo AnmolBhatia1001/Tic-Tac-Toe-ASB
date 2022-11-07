@@ -58,3 +58,44 @@
     text-align: center;
     cursor: pointer;
 }
+
+
+@media screen and (max-width : 400px) {
+    h1{
+        font-size: 1.75em;
+    }
+    .wrapper{
+        margin-top: 0.75em;
+        padding: 20px;
+    }
+    
+    .game-container{
+        margin-top: 2em; 
+        grid-gap: 3px;
+    }
+    
+    .card{
+        width: 75px;
+        height: 75px;
+    }
+    
+    .icon {
+        font-size: 30px;
+    }
+      
+    .msg-box{
+        margin-top: 1.25em;
+        font-size: 1.1em;
+    }
+    
+    .reload-box{
+        padding: 5px;
+        margin: 10px;
+        margin-top: 1.5em;
+    }
+    
+    .reload-box button{
+        padding: 7.5px 20px;
+        font-size: 1em;
+    }
+}

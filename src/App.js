@@ -17,7 +17,7 @@ const App = ()=>{
 
     const changeItem = (itemNumber)=>{
         if(gameEnd){
-            alert("game Ended")
+            alert("Game Over , Reload to Play Again")
         }else if(itemArray[itemNumber] === "clickMe"){
             itemArray[itemNumber] = turn ? "circle" : "cross"
             setTurn(!turn)
@@ -27,16 +27,21 @@ const App = ()=>{
     }
 
     const checkWinnder = ()=>{
-        // const winOne = (itemArray[0] === itemArray[1]) && (itemArray[0]  === itemArray[2]) && (itemArray[0] != "clickMe");
-        if(itemArray[0] === itemArray[1] 
-        && itemArray[0]  === itemArray[2]
-        && itemArray[0] != "clickMe"){
+        const winOne = (itemArray[0] === itemArray[1]) && (itemArray[0]  === itemArray[2]) && (itemArray[0] != "clickMe");
+        const winTwo = (itemArray[3] === itemArray[4]) && (itemArray[3]  === itemArray[5]) && (itemArray[3] != "clickMe");
+        const winThree = (itemArray[6] === itemArray[7]) && (itemArray[6]  === itemArray[8]) && (itemArray[6] != "clickMe");
+        const winFour = (itemArray[0] === itemArray[3]) && (itemArray[0]  === itemArray[6]) && (itemArray[0] != "clickMe");
+        const winFive = (itemArray[1] === itemArray[4]) && (itemArray[1]  === itemArray[7]) && (itemArray[1] != "clickMe");
+        const winSix = (itemArray[2] === itemArray[5]) && (itemArray[2]  === itemArray[8]) && (itemArray[2] != "clickMe");
+        const winSeven = (itemArray[0] === itemArray[4]) && (itemArray[0]  === itemArray[8]) && (itemArray[0] != "clickMe");
+        const winEight = (itemArray[6] === itemArray[4]) && (itemArray[6]  === itemArray[2]) && (itemArray[6] != "clickMe");
+        if(winOne || winTwo || winThree || winFour || winFive || winSix || winSeven || winEight){
             setGameEnd(true)
             setMsg(`${turn ? "circle": "cross"} Won `)
         }
         if(!itemArray.includes("clickMe")){
             setGameEnd(true)
-            setMsg("its draw")
+            setMsg("draw")
         }
     }
 
